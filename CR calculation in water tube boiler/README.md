@@ -31,8 +31,14 @@ Note: DNB is Abbreviation of Departure from Nucleate Boiling which can damage th
 * Pressure drop in downcomer caused by friction
 Note: at first calculate the reynolds number in downcomer, then based on moddy chart the friction is entered by the user. At last the pressure drop in downcomer was calculated.
 * Pressure drop in riser caused by friction, gravity, and acceleration:<br />
-First: friction losses<br />
-It is the same as pressure drop in downcomer but there is a coefficient r3 in the formula that can get from the Thom two-phase multiplication factors for friction chart which is based on pressure and steam quality. the picture of the graph is available (GOTO [Thom two-phase multiplication factors for friction link](https://github.com/Afsaneh-Karami/MATLAB/blob/main/CR%20calculation%20in%20water%20tube%20boiler/Folder/Thom%20two-phase%20multiplication%20factors%20for%20friction.jpg)). for more convinient access to this parameter (r3) I digitalize the graph by an online WebPlotDigitizer ( https://apps.automeris.io/wpd/) and load the result in MATLAB which can be called by TPMFA function ans some other properties. 
+First: Pressure drop caused by friction<br />
+It is the same as pressure drop in downcomer but there is a coefficient r3 in the formula that can get from the Thom two-phase multiplication factors for friction chart which is based on pressure and steam quality. the picture of the graph is available (GOTO [Thom two-phase multiplication factors for friction link](https://github.com/Afsaneh-Karami/MATLAB/blob/main/CR%20calculation%20in%20water%20tube%20boiler/Folder/Thom%20two-phase%20multiplication%20factors%20for%20friction.jpg)). for more convinient access to this parameter (r3) I digitalize the graph by an online WebPlotDigitizer ( https://apps.automeris.io/wpd/) and load the result in MATLAB which can be called by TPMFA function ans some other properties. <br />
+Second: Pressure drop caused by acceleration <br />
+Slipping of liquid and vapor phases regarding each other causes this pressure loss. the same as befor r2 coeeficient obtain from the two_phase_multiplication_factors_acceleration by TPMFA function.<br />
+Third: Pressure drop caused by gravity <br /> 
+When the fluid flows upward inside the tube, it causes the gravity loss. In this eqaution the r4 coefficient comes from Two-phase_multiplication_factors_gravity chart.
+13.Calculation of thermal head:
+
 
 
 
