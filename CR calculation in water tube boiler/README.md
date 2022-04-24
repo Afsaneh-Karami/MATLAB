@@ -18,6 +18,6 @@ The order of the program is the following:
 * enthalpyn of DrumInletWater based on tempreture of inlet water
 Note:function "y=LI(p,variable,matrix,matrix2)" is used to find y in matrix2 by linear interpolation based on variable in matrix at pressure p <br /> 
 * enthalpy in downcomer tube based on the balance of enthalpy in water drum 
-5. After calcualtion of enthalpy in downcomer you can have tempreture of downcomer based on the enthalpy 
+5. After calcualtion of enthalpy in downcomer you can have tempreture of downcomer based on the enthalpy. This tempreture should be %8 lower than the saturated point at presure p.  
 
 
