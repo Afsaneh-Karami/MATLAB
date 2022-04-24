@@ -82,19 +82,19 @@ h_RiserTube=x_s*h_v+(1-x_s)*h_f; %enthalpy in riser tube (kj/kg)
 % calcaulation of tempreture and enthalpy and density and viscosity in downcomer tube-----------------------
 
 %DrumInletWater enthalpy calculation based on tempreture of inlet water (kj/kg)
-h_DrumInletWater=karami(p,T_DrumInletWater,T_all,h_L);
+h_DrumInletWater=LI(p,T_DrumInletWater,T_all,h_L);
 
 % tempreture calculation based on enthalpy 
 h_downcomer=1/CR*(h_DrumInletWater+CR*h_RiserTube-h_v); %enthalpy in downcomer tube (kj/kg)
 
-T_downcomer=karami(p,h_downcomer,h_L,T_all);
+T_downcomer=LI(p,h_downcomer,h_L,T_all);
   
   if   (T_downcomer>=(T_s_t(k)-8)) % 8 degree lesser than saturated point at presure p
      display('it is near to saturated point. please change your parameter')
   end
   
  %density calculation based on tempreture
-den_downcomer=karami(p,T_downcomer,T_all,den_L); 
+den_downcomer=LI(p,T_downcomer,T_all,den_L); 
 
  %viscosity calculation based on tempreture
  T=T_all(1,:);
@@ -148,7 +148,7 @@ if (Re_downcomer<=2300)
 else
     A = imread('Moody.png');
     image(A)
-    f=input(strcat('plese enter Moody’s friction factor from picture based on e/D=',num2str(0.025*10^-3/d_downcomer),' and Re=' ,num2str(Re_downcomer),' :'));
+    f=input(strcat('plese enter Moodyâ€™s friction factor from picture based on e/D=',num2str(0.025*10^-3/d_downcomer),' and Re=' ,num2str(Re_downcomer),' :'));
 end
 % Downcomer_MassFlux=m_water/(n_downcomer*3.14*d_downcomer^2/4);    %water fuxe in downcomer tube (kg/s.m^2)
 P_downcomer_f=(0.810865*f*L_downcomer*V_f*(m_water/n_downcomer)^2/(d_downcomer)^5); % (pa)
@@ -163,7 +163,7 @@ if (Re_RiserTube<=2300)
 else
     A = imread('Moody.png');
     image(A)
-    f1=input(strcat('plese enter Moody’s friction factor from picture based on e/D=',num2str(0.025/d_RiserTube),' and Re=' ,num2str(Re_RiserTube),' :'));
+    f1=input(strcat('plese enter Moodyâ€™s friction factor from picture based on e/D=',num2str(0.025/d_RiserTube),' and Re=' ,num2str(Re_RiserTube),' :'));
     f1=f1/4;
 end
  Pressure=p*14.5;          % bar to PSI
