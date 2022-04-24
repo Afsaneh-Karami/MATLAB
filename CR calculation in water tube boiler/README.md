@@ -3,7 +3,15 @@ I wrote this code in Matlab for the calculation of CR (circulation ratio) for th
 The order of the program is the following:
 1. Enter some information as input which are shown in the tabel:
  ![image](https://user-images.githubusercontent.com/78735911/164958801-67bcac91-16af-4e68-a731-cc5ddc144da2.png)
-
+2. Some thermal properties of water for p=20,25,30,35,40,50 bar and T=100,120,140,160,180,200,220,260 like:
+* enthalpy(h_L) 
+* internal energy(E_L)
+* dynamic viscosity(vis_L)
+* density (den_l)
+* saturated liquid specific volume(V_f)
+* saturated steam specific volume(V_v)
+* enthalpy of saturated water(h_f)
+* enthalpy of saturated steam(h_v)
 
 
 
