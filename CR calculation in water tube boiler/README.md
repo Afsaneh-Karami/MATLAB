@@ -27,6 +27,10 @@ Note: we need it for the reynolds number in downcomer
 Note: DNB is Abbreviation of Departure from Nucleate Boiling which can damage the boiler. All thr liquid in the riser tube evaporated and tempreture increased so much and can disturbe the tube.
 10. Calculation of heat fluxe between riser tube and water in convection side to compare with critical heat fluxe that cause DNB 
 11. Calculation of critical quality of steam caused DNB and compare with our steam quality
-12. Calculation of pressure drop
-*
+12. Calculation of pressure drop which include downcomer, drum, riser:
+* Pressure drop in downcomer caused by friction
+Note: at first calculate the reynolds number in downcomer, then based on moddy chart the friction is entered by the user. At last the pressure drop in downcomer was calculated.
+* Pressure drop in riser caused by friction, gravity, and acceleration:<br />
+First: friction losses<br />
+
 
