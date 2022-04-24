@@ -1,4 +1,4 @@
-function y=karami(p,variable,matrix,matrix2)
+function y=LI(p,variable,matrix,matrix2)
 %this function find y in matrix2 by linear interpolation based on variable in matrix at pressure p
 pt=[20 25 30 35 40 50];
 n=min(find(p==pt));
