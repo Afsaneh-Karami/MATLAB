@@ -12,6 +12,12 @@ The order of the program is the following:
 * saturated steam specific volume(V_v)
 * enthalpy of saturated water(h_f)
 * enthalpy of saturated steam(h_v)
-3. Calculation the velocity of the riser tube  based on Froude number to prevent stratifing of two phase
+3. Calculation the max and min velocity in the riser tube based on Froude number to prevent stratifing of two phase
+4. Calcaulation of enthalpy:
+* enthalpy in riser tube based on steam quality
+* enthalpyn of DrumInletWater based on tempreture of inlet water
+Note:function "y=LI(p,variable,matrix,matrix2)" is used to find y in matrix2 by linear interpolation based on variable in matrix at pressure p <br /> 
+* enthalpy in downcomer tube based on the balance of enthalpy in water drum 
+5. After calcualtion of enthalpy in downcomer you can have tempreture of downcomer based on the enthalpy 
 
 
