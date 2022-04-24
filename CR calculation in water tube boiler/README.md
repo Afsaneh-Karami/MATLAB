@@ -25,5 +25,8 @@ Note: we need it for the reynolds number in downcomer
 8. Calculation of downcomer diameter based on the velocity, number of downcomer, and density.
 9. Calculation of the min and max of the numer of riser tube to prevent DNB. the programm asked the user to enter a appropriate number of it.
 Note: DNB is Abbreviation of Departure from Nucleate Boiling which can damage the boiler. All thr liquid in the riser tube evaporated and tempreture increased so much and can disturbe the tube.
-10. 
+10. Calculation of heat fluxe between riser tube and water in convection side to compare with critical heat fluxe that cause DNB 
+11. Calculation of critical quality of steam caused DNB and compare with our steam quality
+12. Calculation of pressure drop
+*
 
