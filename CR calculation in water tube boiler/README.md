@@ -37,7 +37,10 @@ Second: Pressure drop caused by acceleration <br />
 Slipping of liquid and vapor phases regarding each other causes this pressure loss. the same as befor r2 coeeficient obtain from the two_phase_multiplication_factors_acceleration by TPMFA function.<br />
 Third: Pressure drop caused by gravity <br /> 
 When the fluid flows upward inside the tube, it causes the gravity loss. In this eqaution the r4 coefficient comes from Two-phase_multiplication_factors_gravity chart.
-13.Calculation of thermal head:
+* Pressure drop in drum
+This term based on others articls ia assumed 2000 pa.<br />
+13. Calculation of thermal head ( TTH): This term comes from the differenc between water density in riser and downcomer. 
+14. Comparing TTH and total pressure drop, if CR is chosen correct this two term is eual. 
 
 
 
