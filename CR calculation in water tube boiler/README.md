@@ -20,5 +20,10 @@ Note:function "y=LI(p,variable,matrix,matrix2)" is used to find y in matrix2 by 
 * enthalpy in downcomer tube based on the balance of enthalpy in water drum 
 5. After calcualtion of enthalpy in downcomer you can have tempreture of downcomer based on the enthalpy. This tempreture should be %8 lower than the saturated point at presure p.  
 6. Calculation of density in downcomer based on tempreture (den_downcomer).
-7. 
+7. Calculation of viscosity in downcomer based on tempreture 
+Note: we need it for the reynolds number in downcomer
+8. Calculation of downcomer diameter based on the velocity, number of downcomer, and density.
+9. Calculation of the min and max of the numer of riser tube to prevent DNB. the programm asked the user to enter a appropriate number of it.
+Note: DNB is Abbreviation of Departure from Nucleate Boiling which can damage the boiler. All thr liquid in the riser tube evaporated and tempreture increased so much and can disturbe the tube.
+10. 
 
