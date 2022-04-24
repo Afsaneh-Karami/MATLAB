@@ -26,21 +26,21 @@ Note: we need it for the Reynolds number in the downcomer
 9. Calculation of the min and max of the number of riser tubes to prevent DNB. The user is asked to enter an appropriate number of it.
 Note: DNB is an abbreviation of departure from nucleate boiling that can damage the boiler. It happen when all the liquid in the riser tube evaporate and the temperature increases so much that can burn the tube.
 10. Calculation of heat fluxe between riser tube and water in convection side to compare with critical heat fluxe that cause DNB 
-11. Calculation of critical quality of steam caused DNB and compare with our steam quality
-12. Calculation of pressure drop which include downcomer, drum, riser:
+11. Calculation of critical quality of steam caused DNB and compare it with our steam quality
+12. Calculation of pressure drop which includes downcomer, drum, riser:
 * Pressure drop in downcomer caused by friction
-Note: at first calculate the reynolds number in downcomer, then based on moddy chart the friction is entered by the user. At last the pressure drop in downcomer was calculated.
+Note: at first calculate the Reynolds number in the downcomer, then based on the Moddy chart the friction is entered by the user. At last, the pressure drop in downcomer was calculated.
 * Pressure drop in riser caused by friction, gravity, and acceleration:<br />
 First: Pressure drop caused by friction<br />
-It is the same as pressure drop in downcomer but there is a coefficient r3 in the formula that can get from the Thom two-phase multiplication factors for friction chart which is based on pressure and steam quality. the picture of the graph is available (GOTO [Thom two-phase multiplication factors for friction link](https://github.com/Afsaneh-Karami/MATLAB/blob/main/CR%20calculation%20in%20water%20tube%20boiler/Folder/Thom%20two-phase%20multiplication%20factors%20for%20friction.jpg)). for more convinient access to this parameter (r3) I digitalize the graph by an online WebPlotDigitizer ( https://apps.automeris.io/wpd/) and load the result in MATLAB which can be called by TPMFA function ans some other properties. <br />
+It is the same as pressure drop in downcomer, but there is a coefficient r3 in the formula that can get from the Thom two-phase multiplication factors,  which is based on pressure and steam quality. the picture of the graph is available (GOTO [Thom two-phase multiplication factors for friction link](https://github.com/Afsaneh-Karami/MATLAB/blob/main/CR%20calculation%20in%20water%20tube%20boiler/Folder/Thom%20two-phase%20multiplication%20factors%20for%20friction.jpg)). for more convenient access to this parameter (r3), I digitalize the graph with an online WebPlotDigitizer ( https://apps.automeris.io/wpd/) and load the result in MATLAB, which can be called by the TPMFA function. <br />
 Second: Pressure drop caused by acceleration <br />
-Slipping of liquid and vapor phases regarding each other causes this pressure loss. the same as befor r2 coeeficient obtain from the two_phase_multiplication_factors_acceleration by TPMFA function.<br />
+The slipping of liquid and vapor phases regarding each other causes this pressure loss. the same as before r2 coefficient obtain from the two_phase_multiplication_factors_acceleration by TPMFA function.<br />
 Third: Pressure drop caused by gravity <br /> 
-When the fluid flows upward inside the tube, it causes the gravity loss. In this eqaution the r4 coefficient comes from Two-phase_multiplication_factors_gravity chart.
+When the fluid flows upward inside the tube, it causes gravity loss. In this equation, the r4 coefficient comes from the Two-phase_multiplication_factors_gravity chart.
 * Pressure drop in drum
-This term based on others articls ia assumed 2000 pa.<br />
-13. Calculation of thermal head ( TTH): This term comes from the differenc between water density in riser and downcomer. 
-14. Comparing TTH and total pressure drop, if CR is chosen correct this two term is eual. 
+This term based on other articles is assumed 2000 pa.<br />
+13. Calculation of thermal head ( TTH): This term comes from the difference between water density in riser and downcomer. 
+14. Comparing the TTH and total pressure drop. If CR is chosen correctly TTH is equal total pressure drop. 
 
 
 
