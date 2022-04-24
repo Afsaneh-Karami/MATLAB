@@ -1,9 +1,9 @@
 ## Circulation ratio in water tube boiler:
-I wrote this code in Matlab for the calculation of CR (circulation ratio) for the natural circulation of water in a water tube boiler. I mostly used articles and books by Viswanathan Ganapathy for the thermal equation I implemented in this code. The general idea for this code is that at first estimate an initial value for CR based on the boiler capacity and working pressure and then calculate thermal head and pressure losses in the system if they are equal your first estimation of CR would be correct, otherwise you should change it by the step +-.1 to reach an equivalent among thermal head and pressure drop. This is a trial and error procedure. I assumed the same CR for all tubes but in my new program written in C++, I calculated CR for each tube separately. The flowchart of thid program is available (GOTO [flowchart link](https://github.com/Afsaneh-Karami/MATLAB/blob/main/CR%20calculation%20in%20water%20tube%20boiler/Folder/CR%20flowchart.pdf)).<br /> 
+I wrote this code in Matlab to calculate CR (circulation ratio) for the natural circulation of water in a water tube boiler. I mostly used articles and books by Viswanathan Ganapathy for the thermal equation in this code. The general idea for this code is that at first estimate an initial value for CR based on the boiler capacity and working pressure, and then calculate thermal head and pressure losses in the system if they are equal, the assumed CR would be correct, otherwise you should change it by the step +-.1 to reach an equivalent among thermal head and pressure drop. This is a trial and error procedure. I supposed the same CR for all tubes, but in my new program written in C++, I calculated CR for each tube separately. The flowchart of thid program is available (GOTO [flowchart link](https://github.com/Afsaneh-Karami/MATLAB/blob/main/CR%20calculation%20in%20water%20tube%20boiler/Folder/CR%20flowchart.pdf)).<br /> 
 The order of the program is the following:
-1. Enter some information as input which are shown in the tabel:
+1.Enter some information as input which is shown in the table:
  ![image](https://user-images.githubusercontent.com/78735911/164958801-67bcac91-16af-4e68-a731-cc5ddc144da2.png)
-2. Some thermal properties of water for p=20,25,30,35,40,50 bar and T=100,120,140,160,180,200,220,260 like by interpolation:
+2. Some thermal properties of water in the range p=20,25,30,35,40,50 bar and T=100,120,140,160,180,200,220,260 :
 * enthalpy(h_L) 
 * internal energy(E_L)
 * dynamic viscosity(vis_L)
@@ -13,18 +13,18 @@ The order of the program is the following:
 * enthalpy of saturated water(h_f)
 * enthalpy of saturated steam(h_v)
 3. Calculation the max and min velocity in the riser tube based on Froude number to prevent stratifing of two phase
-4. Calcaulation of enthalpy:
+4. Calculation of enthalpy:
 * enthalpy in riser tube based on steam quality
-* enthalpyn of DrumInletWater based on tempreture of inlet water
-Note:function "y=LI(p,variable,matrix,matrix2)" is used to find y in matrix2 by linear interpolation based on variable in matrix at pressure p <br /> 
-* enthalpy in downcomer tube based on the balance of enthalpy in water drum 
-5. After calcualtion of enthalpy in downcomer you can have tempreture of downcomer based on the enthalpy. This tempreture should be %8 lower than the saturated point at presure p.  
-6. Calculation of density in downcomer based on tempreture (den_downcomer).
-7. Calculation of viscosity in downcomer based on tempreture 
-Note: we need it for the reynolds number in downcomer
-8. Calculation of downcomer diameter based on the velocity, number of downcomer, and density.
-9. Calculation of the min and max of the numer of riser tube to prevent DNB. the programm asked the user to enter a appropriate number of it.
-Note: DNB is Abbreviation of Departure from Nucleate Boiling which can damage the boiler. All thr liquid in the riser tube evaporated and tempreture increased so much and can disturbe the tube.
+* enthalpy of DrumInletWater based on the temperature of inlet water
+Note: function "y=LI(p,variable,matrix,matrix2)" is used to find y in matrix2 by linear interpolation based on variable in matrix at pressure p <br /> 
+* enthalpy in downcomer tube based on the balance of enthalpy in the water drum 
+5.  After calculating enthalpy in the downcomer you can have a temperature of the downcomer based on the enthalpy. This temperature should be %8 lower than the saturated point at pressure p.  
+6. Calculation of density in downcomer based on temperature (den_downcomer).
+7. Calculation of viscosity in downcomer based on temperature 
+Note: we need it for the Reynolds number in the downcomer
+8. Calculation of downcomer diameter based on the velocity, number of downcomers, and density.
+9. Calculation of the min and max of the number of riser tubes to prevent DNB. The user is asked to enter an appropriate number of it.
+Note: DNB is an abbreviation of departure from nucleate boiling that can damage the boiler. It happen when all the liquid in the riser tube evaporate and the temperature increases so much that can burn the tube.
 10. Calculation of heat fluxe between riser tube and water in convection side to compare with critical heat fluxe that cause DNB 
 11. Calculation of critical quality of steam caused DNB and compare with our steam quality
 12. Calculation of pressure drop which include downcomer, drum, riser:
